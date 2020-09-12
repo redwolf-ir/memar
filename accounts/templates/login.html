@@ -1,0 +1,20 @@
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+
+<h1>Login</h1>
+<form method="post">
+  {% csrf_token %}
+  <label for="username">Username:</label>
+  <input type="text" name="username" placeholder="Username">
+  <label for="password">Password:</label>
+  <input type="password" name="password" placeholder="Password">
+  <input type="submit" name="" value="Login">
+</form>
+
+<!-- <a href="{% url 'password_reset' %}">salam</a> -->

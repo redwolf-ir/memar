@@ -1,0 +1,33 @@
+{% for message in messages %}
+  <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    {{ message }}
+  </div>
+{% endfor %}
+
+<h1>Register</h1>
+<form method="post">
+  {% csrf_token %}
+  <input type="hidden" name="requestcode" value="True" />
+	<label for="username" >نام کاربری</label>
+	<input type="text" name="username" placeholder="حداقل سه کاراکتر" required
+  pattern=".{3,}">
+
+	<br>
+	<label for="email" >ایمیل شما</label>
+	<input type="email" name="email"
+  placeholder="لینک تایید ساخت اکانت به این آدرس فرستاده می‌شود" required>
+
+	<br>
+	<label for="password" >کلمه عبور</label>
+	<input type="password" name="password"
+  placeholder="حداقل پنج کاراکتر" required pattern=".{5,}">
+
+  <br>
+	<label for="password2" >کلمه عبور</label>
+	<input type="password" name="password2"
+  placeholder="حداقل پنج کاراکتر" required pattern=".{5,}">
+  <input type="submit" name="" value="Login">
+</form>
